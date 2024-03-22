@@ -8,7 +8,7 @@ from firebase_admin import credentials, db, storage
 from datetime import datetime
 
 # Setup serial connection - adjust this to your Arduino's serial port
-ser = serial.Serial('/dev/tty.usbmodem145460101', 9600, timeout=1)
+ser = serial.Serial('/dev/tty.HC-05', 9600, timeout=1)
 # ser = serial.Serial('/dev/tty.HC-05', 9600, timeout=1)
 
 # Audio recording parameters
