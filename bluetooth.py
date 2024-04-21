@@ -2,6 +2,7 @@ import serial
 import time
 
 # The port and baud rate
+# need to forget the device to properly connect
 bluetoothSerialPort = '/dev/tty.HC-05'
 baudRate = 9600
 
