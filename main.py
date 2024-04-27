@@ -9,7 +9,7 @@ from datetime import datetime
 
 # Setup serial connection - adjust this to your Arduino's serial port
 # need to forget the device to properly connect
-ser = serial.Serial('/dev/tty.HC-05', 9600, timeout=1)
+ser = serial.Serial('/dev/tty.usbmodem145460101', 9600, timeout=1)
 # ser = serial.Serial('/dev/tty.HC-05', 9600, timeout=1)
 
 # Audio recording parameters
@@ -60,7 +60,7 @@ def recognize_speech_from_audio(filename="recording.wav"):
         try:
             text = recognizer.recognize_google(audio_data)
             print("Recognized text:", text)
-            response = f"RES: {text}\n"  # Ensure to include newline character to signify end of message
+            response = f"RES: {text.upper()}\n"  # Ensure to include newline character to signify end of message
             ser.write(response.encode('utf-8'))  # Encode the string to bytes
             upload_to_firebase(filename, text)
         except sr.UnknownValueError:
